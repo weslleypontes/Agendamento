@@ -1,0 +1,75 @@
+dotnet --list-sdks
+
+cria solução
+dotnet new sln -n Agendamento
+
+crias projetos
+dotnet new classlib -n Agendamento.Domain -f net10.0
+
+dotnet new classlib -n Agendamento.Application -f net10.0
+
+dotnet new classlib -n Agendamento.Infrastructure -f net10.0
+
+dotnet new webapi -n Agendamento.API -f net10.0 --use-controllers
+
+Adicionar projetos na solução
+dotnet sln add src/Backend/Agendamento.Domain/Agendamento.Domain.csproj
+
+dotnet sln add src/Backend/Agendamento.Application/Agendamento.Application.csproj
+
+dotnet sln add src/Backend/Agendamento.Infrastructure/Agendamento.Infrastructure.csproj
+
+dotnet sln add src/Backend/Agendamento.API/Agendamento.API.csproj
+
+Adicionar referencias
+dotnet add src/Backend/Agendamento.Application reference src/Backend/Agendamento.Domain
+
+dotnet add src/Backend/Agendamento.Infrastructure reference src/Backend/Agendamento.Domain
+
+dotnet add src/Backend/Agendamento.Infrastructure reference src/Backend/Agendamento.Application
+
+dotnet add src/Backend/Agendamento.API reference src/Backend/Agendamento.Application
+
+dotnet add src/Backend/Agendamento.API reference src/Backend/Agendamento.Infrastructure
+
+
+Instalar pacotes Provedor SQL Server
+dotnet add src/Backend/Agendamento.Infrastructure/Agendamento.Infrastructure.csproj package Microsoft.EntityFrameworkCore.SqlServer --version "10.*"
+
+Pacote de design e migrations
+dotnet add src/Backend/Agendamento.Infrastructure/Agendamento.Infrastructure.csproj package Microsoft.EntityFrameworkCore.Design --version "10.*"
+
+ATAULIZAR dotnet-ef
+dotnet tool update --global dotnet-ef --version "10.*"
+
+CRIAR PASTA
+mkdir src/Backend/Agendamento.Infrastructure/Configurations
+
+mkdir src/Backend/Agendamento.Infrastructure/Data
+
+mkdir src/Backend/Agendamento.Infrastructure/Identity
+
+
+dotnet add src/Backend/Agendamento.Infrastructure/Agendamento.Infrastructure.csproj package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version "10.0.15"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
