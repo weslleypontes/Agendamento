@@ -3,6 +3,7 @@ using Agendamento.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Agendamento.Domain.Entities.Empresas;
+using Agendamento.Domain.Entities.Clientes;
 
 namespace Agendamento.Infrastructure.Data;
 
@@ -33,6 +34,8 @@ public class AppDbContext : IdentityUserContext<UsuarioIdentity, Guid>
 
     public DbSet<AuditoriaEmpresa> AuditoriasEmpresa
         => Set<AuditoriaEmpresa>();
+
+    public DbSet<Cliente> Clientes => Set<Cliente>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

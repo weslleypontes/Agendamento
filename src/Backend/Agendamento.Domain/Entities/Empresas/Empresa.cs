@@ -1,4 +1,5 @@
-﻿
+﻿using Agendamento.Domain.Entities.Clientes;
+
 namespace Agendamento.Domain.Entities.Empresas;
 
 public class Empresa
@@ -27,5 +28,8 @@ public class Empresa
 
     public ICollection<AuditoriaEmpresa> Auditorias { get; set; }
         = new List<AuditoriaEmpresa>();
+
+    public ICollection<Cliente> Clientes { get; set; }
+    = new List<Cliente>();
 }
 
