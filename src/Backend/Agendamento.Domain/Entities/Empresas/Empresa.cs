@@ -1,4 +1,5 @@
 ﻿using Agendamento.Domain.Entities.Clientes;
+using Agendamento.Domain.Entities.Profissionais;
 
 namespace Agendamento.Domain.Entities.Empresas;
 
@@ -31,5 +32,11 @@ public class Empresa
 
     public ICollection<Cliente> Clientes { get; set; }
     = new List<Cliente>();
+
+    public ICollection<Profissional> Profissionais { get; set; }
+    = new List<Profissional>();
+
+    public ICollection<Servico> Servicos { get; set; }
+    = new List<Servico>();
 }
 

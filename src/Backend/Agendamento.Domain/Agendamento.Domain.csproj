@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\Clientes\" />
     <Folder Include="Entities\Agendamentos\" />
     <Folder Include="Entities\Financeiro\" />
     <Folder Include="Entities\Seguranca\" />
-    <Folder Include="Entities\Profissionais\" />
     <Folder Include="Enums\" />
   </ItemGroup>
 

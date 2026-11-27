@@ -1,4 +1,5 @@
-﻿
+﻿using Agendamento.Domain.Entities.Profissionais;
+
 namespace Agendamento.Domain.Entities.Empresas;
 
 public class Unidade
@@ -48,4 +49,7 @@ public class Unidade
 
     public ConfiguracaoAgendamento ConfiguracaoAgendamento
     { get; set; } = null!;
+
+    public ICollection<ProfissionalUnidade> Profissionais
+    { get; set; } = new List<ProfissionalUnidade>();
 }
